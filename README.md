@@ -1,4 +1,4 @@
-Manticore Search Wordpress Plugin
+Manticore Search Wordpress Plugin (beta)
 ========
 
 Manticore Search Plugin allows to use Manticore Search to enable ultra-fast and feature-rich search on WordPress-based websites.
