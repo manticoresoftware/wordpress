@@ -1,0 +1,36 @@
+<?php echo $this->render( 'admin/messagebox.phtml' ); ?>
+<div class="postbox">
+    <h3 class="hndle">Set Apache Tika location</h3>
+    <div class="inside">
+        <form action="<?php echo $_SERVER["REQUEST_URI"]; ?>" method="post" id="wizard_form">
+            <input type="hidden" name="tika_process" value="1"/>
+            <input type="hidden" name="action" value="tika"/>
+            <table class="form-table">
+                <tr>
+                    <th scope="row"><label for="tika_host">Host name or IP address</label></th>
+                    <td>
+                        <input type="text" name="tika_host" id="tika_host"
+                               value="<?php if ( $this->view->tika_host !== 'false' ) {
+	                               echo $this->view->tika_host;
+                               }?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="tika_port">Port</label></th>
+                    <td>
+                        <input type="text" name="tika_port" id="tika_port"
+                               value="<?php if ( $this->view->tika_port !== 'false' ) {
+	                               echo $this->view->tika_port;
+                               }?>"/>
+                    </td>
+                </tr>
+            </table>
+            <p class="submit">
+                <input class="button-secondary cancel" type="button"
+                       onClick="return wizard_skip('indexing');" value="Skip step"/>
+                <input class="button-primary" type="button" name="next"
+                       onClick="return wizard_next();" value="Save &amp; Continue"/>
+            </p>
+        </form>
+    </div>
+</div>
